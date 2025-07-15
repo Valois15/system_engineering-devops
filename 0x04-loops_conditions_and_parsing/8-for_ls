@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays the part of filenames after the first dash
+for file in *; do
+  # Skip if there's no dash
+  if [[ "$file" == *-* ]]; then
+    echo "${file#*-}"
+  fi
+done
