@@ -1,4 +1,21 @@
 #!/usr/bin/env bash
-# A Bash script that displays all running processes in a user-oriented, hierarchical format
+# Description: Displays a hierarchical list of all currently running processes.
+#              Includes processes from all users and those without a TTY.
+#              Provides user-oriented information like PID, CPU/memory usage, and command.
 
-ps -eo user,lstart,cmd --forest
+echo "Displaying all running processes with hierarchy and detailed information:"
+echo "----------------------------------------------------------------------"
+
+# The 'ps' command is used to display information about active processes.
+# Options used:
+#   -a: Display processes of all users (not just your own).
+#   -u: Display user-oriented format (USER, PID, %CPU, %MEM, VSZ, RSS, TTY, STAT, START, TIME, COMMAND).
+#   -x: Display processes without a controlling TTY (terminal).
+#   -f: "Forest" format, which shows process hierarchy using ASCII art.
+#
+# This combination provides a human-readable, comprehensive, and hierarchical view
+# of all processes running on the system.
+ps auxf
+
+echo "----------------------------------------------------------------------"
+echo "Script finished."
